@@ -4,13 +4,14 @@ connection = sqlite3.connect('kingdom.db')
 
 cursor = connection.cursor()
 
-command1 = """ 
-CREATE TABLE Inventions(
-id INTEGER PRIMAY KEY,
-Name TEXT,
-Description TEXT);"""
+command_create = """ 
+CREATE TABLE Materials (
+    id INTEGER PRIMARY KEY,
+    Name TEXT,
+    Category TEXT,
+    Rarity TEXT);"""
 
-cursor.execute(command1)
+cursor.execute(command_create)
 
 connection.commit
 connection.close

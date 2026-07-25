@@ -4,23 +4,28 @@ connection = sqlite3.connect('kingdom.db')
 cursor = connection.cursor()
 
 command_insert = """
-INSERT INTO Inventions
+INSERT INTO Materials
 Values
-(1, 'Soap', 'Basic hygiene product made from natural ingredients'),
-(2, 'Gunpowder', 'Explosive mixture used for weapons and mining'),
-(3, 'Glass', 'Transparent material used for containers and lenses'),
-(4, 'Medicine', 'Sulfa drug used to cure pneumonia'),
-(5, 'Electric Generator', 'Device that produces electricity'),
-(6, 'Light Bulb', 'Electric lamp for illumination'),
-(7, 'Telephone', 'Communication device using electrical signals'),
-(8, 'Steam Engine', 'Machine powered by steam pressure'),
-(9, 'Hot Air Balloon', 'Aircraft lifted by heated air'),
-(10, 'Perseus', 'Advanced sailing ship built for exploration'),
-(11, 'Katana', 'Traditional Japanese sword'),
-(12, 'Ramen', 'Nutritious noodle dish'),
-(13, 'Camera', 'Device used to capture photographs'),
-(14, 'Radio', 'Wireless communication system'),
-(15, 'Drone', 'Small remote-controlled flying device');
+(1, 'Stone', 'Mineral', 'Common'),
+(2, 'Wood', 'Plant', 'Common'),
+(3, 'Clay', 'Mineral', 'Common'),
+(4, 'Sand', 'Mineral', 'Common'),
+(5, 'Glass', 'Mineral', 'Uncommon'),
+(6, 'Iron', 'Metal', 'Uncommon'),
+(7, 'Copper', 'Metal', 'Uncommon'),
+(8, 'Coal', 'Fuel', 'Common'),
+(9, 'Sulfur', 'Chemical', 'Rare'),
+(10, 'Limestone', 'Mineral', 'Common'),
+(11, 'Cotton', 'Plant', 'Common'),
+(12, 'Bamboo', 'Plant', 'Common'),
+(13, 'Gold', 'Precious Metal', 'Rare'),
+(14, 'Silver', 'Precious Metal', 'Rare'),
+(15, 'Tungsten', 'Metal', 'Rare'),
+(16, 'Platinum', 'Precious Metal', 'Legendary'),
+(17, 'Nitric Acid', 'Chemical', 'Rare'),
+(18, 'Alcohol', 'Chemical', 'Uncommon'),
+(19, 'Charcoal', 'Fuel', 'Common'),
+(20, 'Manganese', 'Metal', 'Rare');
 """
 cursor.execute(command_insert)
 connection.commit
