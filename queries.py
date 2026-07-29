@@ -3,12 +3,8 @@ import sqlite3
 connection = sqlite3.connect("kingdom.db")
 cursor = connection.cursor()
 
-cursor.execute("""
-SELECT *
-FROM Inventions;
-""")
+cursor.execute("PRAGMA integrity_check;")
 
-rows = cursor.fetchall()
+print(cursor.fetchone())
 
-for row in rows:
-    print(row)
+connection.close()

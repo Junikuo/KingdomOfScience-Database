@@ -13,9 +13,7 @@ menu = """
 2. View Inventions
 3. View Character Contributions
 4. View Materials
-5. Search Character
-6. Search Invention
-7. Exit
+5. Exit
 """
 
 print(menu)
@@ -47,8 +45,18 @@ while True:
 
      elif option == 3:
         command3 = """
-        SELECT *
-        FROM Character_Inventions;"""
+       SELECT 
+     Characters.name,
+     Inventions.name,
+     Character_Inventions.contribution
+
+     FROM Character_Inventions
+
+     JOIN Characters
+     ON Character_Inventions.character_id = Characters.id
+
+     JOIN Inventions
+     ON Character_Inventions.invention_id = Inventions.id;"""
 
         cursor.execute(command3)
         Character_Inventions = cursor.fetchall()
@@ -63,10 +71,10 @@ while True:
 
         cursor.execute(command4)
 
-        Materials = cursor.fetchfall()
+        Materials = cursor.fetchall()
 
-        for material in Materials:
-            print(material)
+        for Material in Materials:
+            print(Material)
 
 
 
