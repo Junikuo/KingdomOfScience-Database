@@ -76,6 +76,12 @@ while True:
         for Material in Materials:
             print(Material)
 
+     elif option == 5:
+        break
+
+     else:
+        print("Insert a valid option")
+
 
 
     
