@@ -3,8 +3,14 @@ import sqlite3
 connection = sqlite3.connect("kingdom.db")
 cursor = connection.cursor()
 
-cursor.execute("PRAGMA integrity_check;")
+cursor.execute("""
+SELECT *
+FROM Character_Inventions;
+""")
 
-print(cursor.fetchone())
+rows = cursor.fetchall()
+
+print("Número de filas:", len(rows))
+print(rows)
 
 connection.close()
